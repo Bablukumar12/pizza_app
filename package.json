@@ -12,14 +12,13 @@
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
     "production": "mix --production"
-
   },
   "dependencies": {
     "cross-env": "^7.0.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs": "^2.0.0",
-    "layouts": "^3.0.2"
+    "express-ejs-layouts": "^2.5.0"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.19",
