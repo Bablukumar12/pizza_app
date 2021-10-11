@@ -4,6 +4,31 @@ const port = 8000
 const ejs = require('ejs')
 const expressLayout = ('express-ejs-layouts')
 const path = require('path')
+const mongoose = require('mongoose')
+
+
+//database connection
+
+
+
+const url = 'mongodb://localhost/pizza';
+    mongoose.connect(url, {
+           // useCreateIndex: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+          //  useFindAndModify: true
+        });
+        const connection = mongoose.connection;
+        connection.once('open', () => { console.log('Connected Successfully...');})
+        
+        
+        
+         //.catch(err => {
+       //   console.error('Not Connected')
+           
+        // });
+       
+
 
 
 app.use(express.static('public'))
