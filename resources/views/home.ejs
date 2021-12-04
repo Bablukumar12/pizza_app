@@ -25,7 +25,9 @@
         <li class="ml-6"><a href="/offers">Offers</a></li>
         <li class="ml-6"><a href="/register">Register</a></li>
         <li class="ml-6"><a href="/login">Login</a></li>
-        <li class="ml-6"><a href="/cart" class="inline-block px-4 py-2 rounded-full"><img src="/img/cart.png" alt="cart"> </a></li>
+        <li class="ml-6"><a href="/cart" class="inline-block px-4 py-2 rounded-full flex items-center">
+          <span id ="cartCorner" class="text-white font-bold pr-2"><%= session.cart? session.cart.totalQty : '' %></span>
+          <img src="/img/cart.png" alt="cart"> </a></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +47,7 @@
   <section class="menu container mx-auto py-16">
     <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
     
-    <div class="grid grid-cols-3 gap-x-16 gap-y-12">
+    <div class="grid grid-cols-4 gap-x-16 gap-y-12">
       
       <% pizzas.forEach(function(pizza) {%>
       <div class="w-64">
@@ -59,7 +61,7 @@
         
         <div class="flex justify-around mt-6" >
           <span class="font-bold text-lg">₹<%=pizza.price%></span>
-          <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+          <button data-pizza="<%= JSON.stringify(pizza) %>" class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
             <span>+</span>
             <span class="ml-4">add</span>
           </button>
